@@ -1,12 +1,13 @@
 import requests
 import json
 from datetime import date
-import os
-from dotenv import load_dotenv
+#import os
+#from dotenv import load_dotenv
+#load_dotenv(dotenv_path="./.env")
+
 from airflow.decorators import task
 from airflow.models import Variable
 
-load_dotenv(dotenv_path="./.env")
 
 
 API_KEY = Variable.get("API_KEY")
