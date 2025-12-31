@@ -16,7 +16,7 @@ def channel_handle():
     with mock.patch.dict("os.environ", AIRFLOW_VAR_CHANNEL_HANDLE="MRCHEESE"):
         yield Variable.get("CHANNEL_HANDLE")
 
-
+# mock data for postgress unit test
 @pytest.fixture
 def mock_postgres_conn_vars():
     conn = Connection(
