@@ -46,7 +46,6 @@ with DAG (
     save_to_json_task = save_to_json(extracted_data)
 
     # Define dependencies
-
     playlist_id >> video_ids >> extracted_data >> save_to_json_task
 
 # Variables
@@ -84,3 +83,4 @@ with DAG(
 
     # Define dependencies
     soda_validate_staging >> soda_validate_core
+    
