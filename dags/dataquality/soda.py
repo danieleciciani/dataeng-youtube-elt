@@ -6,6 +6,8 @@ logger = logging.getLogger(__name__)
 SODA_PATH = "/opt/airflow/include/soda"
 DATASOURCE = "pg_datasource"
 
+# running command
+# soda scan -d pg_datasource -c /opt/airflow/include/soda/configuration.yml -v SCHEMA=staging /opt/airflow/include/soda/checks.yml
 
 def yt_elt_data_quality(schema):
     try:
