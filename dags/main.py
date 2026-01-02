@@ -34,7 +34,6 @@ default_args = {
 staging_schema = "staging"
 core_schema = "core"
 
-
 #dag 1: produce_json
 with DAG(
     dag_id="produce_json",
