@@ -1,4 +1,4 @@
-dciciani-srl:
+dataeng_yt_elt:
   target: dev
   outputs:
     dev:

@@ -2,3 +2,6 @@ course-venv/
 __pycache__/
 .env
 logs/
+dataeng_yt_elt/logs/
+dataeng_yt_elt/target/
+dataeng_yt_elt/dbt_packages/

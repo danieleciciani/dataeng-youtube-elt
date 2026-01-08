@@ -102,7 +102,7 @@ x-airflow-common:
     #aggiunta per far leggere il file .dbt/profiles
     - ./.dbt/profiles.yml:/home/airflow/.dbt/profiles.yml:ro
     #aggiunta folder dbt init
-    - ./dataeng_yt_elt:/home/airflow/dataeng_yt_elt
+    - ./dataeng_yt_elt:/opt/airflow/dataeng_yt_elt
   user: "${AIRFLOW_UID}:0"
   depends_on:
     &airflow-common-depends-on
@@ -332,6 +332,7 @@ services:
   #     <<: *airflow-common-depends-on
   #     airflow-init:
   #       condition: service_completed_successfully
- 
+
 volumes:
   postgres-db-volume:
+
