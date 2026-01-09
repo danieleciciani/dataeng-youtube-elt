@@ -7,7 +7,8 @@ from api.video_stats import (
     get_playlist_id,
     get_video_ids,
     extract_video_data,
-    save_to_json
+    save_to_json,
+    save_to_csv
 )
 from datawarehouse.dwh import staging_table, core_table
 from dataquality.soda import yt_elt_data_quality
@@ -48,6 +49,7 @@ with DAG(
     video_ids = get_video_ids(playlist_id)
     extract_data = extract_video_data(video_ids)
     save_to_json_task = save_to_json(extract_data)
+    save_to_csv_task = save_to_csv(extract_data)
 
     trigger_update_db = TriggerDagRunOperator(
         task_id="trigger_update_db",
@@ -55,7 +57,7 @@ with DAG(
     )
 
     # Define dependencies
-    playlist_id >> video_ids >> extract_data >> save_to_json_task >> trigger_update_db
+    playlist_id >> video_ids >> extract_data >> save_to_json_task >>save_to_csv_task >> trigger_update_db
 
 #dag 2: update_db
 with DAG(
