@@ -1,0 +1,42 @@
+seeds:
+  - name: yt-video
+    description: 'Youtube video raw dataset MrBeast channel'  
+    columns:
+      - name: Video_Id
+        description: video identifier
+        tests:
+          - unique
+          - not_null
+      - name: Title
+        description: video description
+        tests:
+          - not_null
+      - name: Published_At
+        description: video identifier
+        tests:
+          - not_null
+      - name: duration
+        description: duration of each video espressed in yt custom format
+        tests:
+          - not_null
+      - name: View_Count
+        description: view count of a video
+      - name: Like_Count
+        description: like count of a video
+      - name: Comment_Count
+        description: comment count of a video
+
+    config:
+      quote_columns: false
+      column_types: 
+        video_id: text
+        title: text
+        publishedAt: text
+        duration: text
+        viewCount: int
+        likeCount: int
+        commentCount: int
+      delimiter: ","
+    
+    
+   

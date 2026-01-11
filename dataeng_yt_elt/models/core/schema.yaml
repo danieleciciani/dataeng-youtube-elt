@@ -1,0 +1,32 @@
+models:
+  - name: yt-video-core
+    description: "A starter dbt model"
+    columns:
+      - name: Video_Id
+        description: video identifier
+        tests:
+          - unique
+          - not_null
+      - name: Title
+        description: video description
+        tests:
+          - not_null
+      - name: publishedat
+        description: video identifier
+        tests:
+          - not_null
+      - name: duration
+        description: duration of each video espressed in yt custom format
+        tests:
+          - not_null
+      - name: View_Count
+        description: view count of a video
+      - name: Like_Count
+        description: like count of a video
+      - name: Comment_Count
+        description: comments count of a video
+      - name: mockfield
+        description: dummy fileds of fixed value=12345
+        tests:
+          - length:
+              len: 5
